@@ -99,9 +99,9 @@ nav{
     margin-left: 20%;
 }
 
-#section-connexion{
+#section-connexion, #section-inscription{
     width: 66%;
-    margin-left: 35%;
+    margin-left: 30%;
 }
 
 #menu-gauche{
@@ -141,7 +141,7 @@ form .group{
 
 form .group label{
     display: inline-block;
-    width: 45%;
+    width: 52%;
     margin-right: 5%;
     text-align: right;
 }
@@ -157,7 +157,7 @@ form .group select{
     width: 150px
 }
 .submit-group {
-    max-width: 500px;
+    max-width: 60%;
     text-align: center;
     padding: 14px 0px 14px 28px;
 }
@@ -231,7 +231,7 @@ form .group select{
 }
 
 /* Ref: https://www.w3schools.com/howto/howto_js_snackbar.asp */
-#ajout-panier, #connexion-reussie {
+#ajout-panier, #connexion-reussie, #inscription-reussie {
     visibility: hidden;
     min-width: 250px;
     margin-left: -125px;
@@ -247,13 +247,14 @@ form .group select{
     font-size: 17px;
 }
 
-#ajout-panier.show, #qte-manquante.show, #connexion-reussie.show, #connexion-echouee.show {
+#ajout-panier.show, #qte-manquante.show, #connexion-reussie.show,
+#connexion-echouee.show, #inscription-reussie.show, #inscription-echouee.show  {
     visibility: visible;
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
-#qte-manquante, #connexion-echouee {
+#qte-manquante, #connexion-echouee, #inscription-echouee {
     visibility: hidden;
     min-width: 250px;
     margin-left: -125px;

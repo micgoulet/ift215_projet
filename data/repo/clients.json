@@ -71,5 +71,37 @@
             "items": []
         },
         "historique": []
+    },
+    {
+        "id": 3,
+        "prenom": "John",
+        "nom": "Johnson",
+        "age": 58,
+        "adresse": "111 nowhere",
+        "pays": "Canada",
+        "courriel": "john@test.com",
+        "mdp": "$2b$08$oO1V5inBaKGjRxW3lECcm.RjVNf2U.xyhSW4TkeMpy75gNcyK8aWO",
+        "panier": {
+            "valeur": 99.04,
+            "items": [
+                {
+                    "id": 0,
+                    "idProduit": 0,
+                    "nomProduit": "Banane",
+                    "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
+                    "prix": 24.76,
+                    "quantite": 2
+                },
+                {
+                    "id": 1,
+                    "idProduit": 1,
+                    "nomProduit": "Tomate",
+                    "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
+                    "prix": 24.76,
+                    "quantite": 2
+                }
+            ]
+        },
+        "historique": []
     }
 ]
