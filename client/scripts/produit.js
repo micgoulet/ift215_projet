@@ -8,7 +8,7 @@ function add_item(id_item) {
     $.ajax({
         url: "/clients/" + ID_CLIENT + "/panier",
         method: "POST",
-        data: {"idProduit": id_item, "quantite": 1},
+        data: {"idProduit": id_item, "quantite": $('#input-qte').val()},
         beforeSend: function (xhr) {
             xhr.setRequestHeader('Authorization', "Basic " + TOKEN_CLIENT);
         },
