@@ -8,12 +8,17 @@ function add_item(id_item) {
     $.ajax({
         url: "/clients/" + ID_CLIENT + "/panier",
         method: "POST",
-        data: {"idProduit": id_item, "quantite": $('#input-qte').val()},
+        data: {"idProduit": id_item, "quantite": $('#input-qte' + id_item).val()},
         beforeSend: function (xhr) {
             xhr.setRequestHeader('Authorization', "Basic " + TOKEN_CLIENT);
         },
         error: function (result) {
-            showQteManquante();
+            if (ID_CLIENT == null) {
+                showNonConnecte();
+            }
+            else {
+                showQteManquante();
+            }
         },
         success: function (result) {
             $('#item_counter').text(result.items.length)
@@ -45,8 +50,8 @@ function item_to_html(item) {
             '            </div>\n' +
             '            <div class="mt-2">\n' +
             '                <form>\n' +
-            '                    <label for="quantite" id="label-qte">Quantité :</label>\n' +
-            '                    <input id="input-qte"/>\n' +
+            '                    <label for="input-qte'+ item.id +'" id="label-qte">Quantité :</label>\n' +
+            '                    <input id="input-qte'+ item.id +'"/>\n' +
             '                </form>\n' +
             '            </div>\n' +
             '            <div class="d-flex flex-column mt-4">\n' +
@@ -181,6 +186,12 @@ function showAjoutPanier() {
 
 function showQteManquante() {
     var x = document.getElementById("qte-manquante");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+
+function showNonConnecte() {
+    var x = document.getElementById("non-connecte");
     x.className = "show";
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 }

@@ -82,7 +82,7 @@
         "courriel": "john@test.com",
         "mdp": "$2b$08$oO1V5inBaKGjRxW3lECcm.RjVNf2U.xyhSW4TkeMpy75gNcyK8aWO",
         "panier": {
-            "valeur": 99.04,
+            "valeur": 126.03000000000002,
             "items": [
                 {
                     "id": 0,
@@ -98,7 +98,15 @@
                     "nomProduit": "Tomate",
                     "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
                     "prix": 24.76,
-                    "quantite": 2
+                    "quantite": 3
+                },
+                {
+                    "id": 2,
+                    "idProduit": 2,
+                    "nomProduit": "concombre",
+                    "descriptionProduit": "pas un jouet",
+                    "prix": 2.23,
+                    "quantite": 1
                 }
             ]
         },

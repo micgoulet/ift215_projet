@@ -248,13 +248,14 @@ form .group select{
 }
 
 #ajout-panier.show, #qte-manquante.show, #connexion-reussie.show,
-#connexion-echouee.show, #inscription-reussie.show, #inscription-echouee.show  {
+#connexion-echouee.show, #inscription-reussie.show, #inscription-echouee.show,
+#non-connecte.show{
     visibility: visible;
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
-#qte-manquante, #connexion-echouee, #inscription-echouee {
+#qte-manquante, #connexion-echouee, #inscription-echouee, #non-connecte {
     visibility: hidden;
     min-width: 250px;
     margin-left: -125px;
