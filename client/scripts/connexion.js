@@ -1,3 +1,7 @@
+ID_CLIENT = null
+TOKEN_CLIENT = null
+ROLE_CLIENT = null
+
 function seConnecter() {
     $.ajax({
         type: "POST",
@@ -8,6 +12,9 @@ function seConnecter() {
         },
         success: function(data) {
             showConnexionReussie();
+            ID_CLIENT = data.idClient;
+            TOKEN_CLIENT = data.token;
+            ROLE_CLIENT = data.role;
         },
     });
 };
