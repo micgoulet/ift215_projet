@@ -12,8 +12,12 @@ function add_item(id_item) {
         beforeSend: function (xhr) {
             xhr.setRequestHeader('Authorization', "Basic " + TOKEN_CLIENT);
         },
+        error: function (result) {
+            showQteManquante();
+        },
         success: function (result) {
             $('#item_counter').text(result.items.length)
+            showAjoutPanier();
         }
     });
 }
@@ -60,16 +64,7 @@ function getSearchBar() {
         search_bar = $('<div></div>')
             .addClass('input-group mb-3')
             .append('<input type="search" class="form-control" placeholder="search" id="recherche">\n' +
-                '       <span class="input-group-text"><i class="bi-search"></i></span>\n' +
-                '       <a href="#/panier" class="">\n' +
-                '       <button type="button" class="btn btn-primary position-relative">\n' +
-                '           <i class="bi bi-cart-plus"></i>\n' +
-                '           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"\n' +
-                '                   id="item_counter">\n' +
-                '                     0\n' +
-                '           </span>\n' +
-                '           </button>\n' +
-                '       </a>')
+                '       <span class="input-group-text"><i class="bi-search"></i></span>\n')
     return search_bar;
 }
 
@@ -178,6 +173,17 @@ function produit_to_html(item) {
     return item_card;
 }
 
+function showAjoutPanier() {
+    var x = document.getElementById("ajout-panier");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+
+function showQteManquante() {
+    var x = document.getElementById("qte-manquante");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
 
 // $.ajax
 // ({
