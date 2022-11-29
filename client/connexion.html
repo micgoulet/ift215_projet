@@ -1,0 +1,26 @@
+<h1 id="para-1" class="centrer">Connexion</h1>
+
+<section id="section-connexion">
+    <form method="post" action="confirmation.html">
+        <fieldset id="#renseignement-auth">
+            <div class="group">
+                <label for="courriel-connexion">Adresse courriel</label>
+                <input type="email" name="courriel-connexion" id="courriel-connexion" required/>
+            </div>
+            <div class="group">
+                <label for="mdp-connexion">Mot de passe</label>
+                <input type="password" name="mdp-connexion" id="mdp-connexion" required/>
+            </div>
+        </fieldset>
+
+        <div class="group submit-group">
+            <input type="button" value="Soumettre" onclick="seConnecter()">
+            <br><br>
+            <input type="button" value="Inscription">
+        </div>
+    </form>
+
+    <div id="connexion-reussie">Connexion réussie</div>
+    <div id="connexion-echouee">Connexion échouée</div>
+</section>
+

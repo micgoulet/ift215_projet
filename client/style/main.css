@@ -94,9 +94,14 @@ nav{
     height: 150px;
 }
 
-#texte-acceuil, #section-inscription, #section-pdv, #titre{
+#texte-acceuil, #section-pdv, #titre{
     width: 66%;
     margin-left: 20%;
+}
+
+#section-connexion{
+    width: 66%;
+    margin-left: 35%;
 }
 
 #menu-gauche{
@@ -148,12 +153,12 @@ form .group select{
     width: 30%;
 }
 
-.submit-group input[type=submit]{
+.submit-group input[type=button]{
     width: 150px
 }
 .submit-group {
     max-width: 500px;
-    text-align: right;
+    text-align: center;
     padding: 14px 0px 14px 28px;
 }
 
@@ -226,7 +231,7 @@ form .group select{
 }
 
 /* Ref: https://www.w3schools.com/howto/howto_js_snackbar.asp */
-#ajout-panier {
+#ajout-panier, #connexion-reussie {
     visibility: hidden;
     min-width: 250px;
     margin-left: -125px;
@@ -242,13 +247,13 @@ form .group select{
     font-size: 17px;
 }
 
-#ajout-panier.show, #qte-manquante.show {
+#ajout-panier.show, #qte-manquante.show, #connexion-reussie.show, #connexion-echouee.show {
     visibility: visible;
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
-#qte-manquante {
+#qte-manquante, #connexion-echouee {
     visibility: hidden;
     min-width: 250px;
     margin-left: -125px;

@@ -114,7 +114,7 @@ function chargerpanier() {
     });
 }
 
-// Pour la barre de recherche
+// Pour rendre la barre de recherche fonctionnelle
 $(document).keydown(function(e){
     $("#recherche").on("keyup", function() {
         var value = $(this).val().toLowerCase();
