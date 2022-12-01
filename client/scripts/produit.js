@@ -21,7 +21,6 @@ function add_item(id_item) {
             }
         },
         success: function (result) {
-            $('#item_counter').text(result.items.length)
             showAjoutPanier();
         }
     });
@@ -75,7 +74,7 @@ function getSearchBar() {
 
 // Affiche le bouton de retour vers la page produit
 function getButtonRetour() {
-    return '<button onclick="chargerproduit()">Retour</button>'
+    return '<button class="btn btn-primary btn-sm" onclick="chargerproduit()">Retour</button>'
 }
 
 
@@ -94,6 +93,33 @@ function chargerproduit() {
     });
 }
 
+function retirerProduit(idProduit) {
+    $.ajax({
+        url: "/clients/" + ID_CLIENT + "/panier/" + idProduit,
+        method: "DELETE",
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader('Authorization', "Basic " + TOKEN_CLIENT);
+        },
+        success: function (result) {
+            chargerpanier();
+        }
+    })
+}
+
+function modifierQte(id_item, qte) {
+    $.ajax({
+        url: "/clients/" + ID_CLIENT + "/panier/" + id_item,
+        method: "PUT",
+        data: {"quantite": parseInt($('#panier-qte' + id_item).val()) - qte },
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader('Authorization', "Basic " + TOKEN_CLIENT);
+        },
+        success: function (result) {
+            chargerpanier();
+        }
+    });
+}
+
 function chargerpanier() {
     $.ajax({
         url: "/clients/" + ID_CLIENT + "/panier",
@@ -103,15 +129,41 @@ function chargerpanier() {
         },
         success: function (result) {
             console.log(result)
+            $('#cart_details').html("");
             $("#total").text(result.valeur);
             $.each(result.items, function (key, value) {
 
-                item = $("<tr>" +
-                    "<td>" + value.nomProduit + "</td> " +
-                    "<td>" + value.prix + "</td> " +
-                    "<td>" + value.quantite + "</td> " +
-                    "<td>" + value.prix * value.quantite + "</td> " +
-                    "</tr>");
+                item = $('<div></div>')
+                    .addClass('card card-body mt-4')
+                    .append('    <div class="row">\n' +
+                    '        <div class="col-lg-2 mb-4">\n' +
+                    '            <img src="images/'+ value.nomProduit +'.jpg" width="150" height="150" alt="'+ value.nomProduit +'">\n' +
+                    '        </div>\n' +
+                    '        <div class="col-lg-7">\n' +
+                    '            <h1>'+ value.nomProduit + '</h1>\n' +
+                    '            <p> Prix : \n' +
+                    '                '+ value.prix +'\n' +
+                    '            </p>\n' +
+                        '            <div class="mt-2">\n' +
+                        '                <form>\n' +
+                        '                    <label for="panier-qte'+ value.id +'" id="paniel-label-qte">Quantité :</label>\n' +
+                        '                    <input id="panier-qte'+ value.id +'" value="'+ value.quantite +'"/>\n' +
+                        '                </form>\n' +
+                        '            </div>\n' +
+                        '            <div class="mt-2">\n' +
+                        '                <button class="btn btn-primary btn-sm" type="button" onclick="modifierQte(' + value.id + ', '+ value.quantite + ')">Modifier</button>\n' +
+                        '            </div>\n' +
+                    '        </div>\n' +
+                    '        <div class="col-md-6 col-xl-3">\n' +
+                    '            <div>\n' +
+                    '                <h4>Prix : '+ value.prix * value.quantite +'</h4>\n' +
+                    '            </div>\n' +
+
+                    '            <div class="d-flex flex-column mt-4">\n' +
+                    '                <button class="btn btn-primary btn-sm" type="button" onclick="retirerProduit(' + value.id + ')">Retirer</button>\n' +
+                    '            </div>\n' +
+                    '        </div>\n' +
+                    '    </div>')
 
                 $('#cart_details').append(item);
             });
