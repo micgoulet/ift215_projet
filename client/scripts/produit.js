@@ -164,7 +164,6 @@ function chargerpanier() {
                     '            </div>\n' +
                     '        </div>\n' +
                     '    </div>')
-
                 $('#cart_details').append(item);
             });
         }
