@@ -122,6 +122,40 @@
                 ],
                 "status": "reçue",
                 "date": "2022-12-01T23:29:01.517Z"
+            },
+            {
+                "id": 11,
+                "idClient": 1,
+                "montant": 24.76,
+                "produits": [
+                    {
+                        "id": 0,
+                        "idProduit": 7,
+                        "nomProduit": "Tomate",
+                        "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
+                        "prix": 24.76,
+                        "quantite": 1
+                    }
+                ],
+                "status": "reçue",
+                "date": "2022-12-02T18:48:02.147Z"
+            },
+            {
+                "id": -1,
+                "idClient": 1,
+                "montant": 24.76,
+                "produits": [
+                    {
+                        "id": 0,
+                        "idProduit": 3,
+                        "nomProduit": "Tomate",
+                        "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
+                        "prix": 24.76,
+                        "quantite": 1
+                    }
+                ],
+                "status": "reçue",
+                "date": "2022-12-02T18:49:04.500Z"
             }
         ]
     },
