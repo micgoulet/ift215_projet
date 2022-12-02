@@ -251,8 +251,6 @@ form .group select{
 #connexion-echouee.show, #inscription-reussie.show, #inscription-echouee.show,
 #non-connecte.show, #confirmation-echouee{
     visibility: visible;
-    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
 #qte-manquante, #connexion-echouee, #inscription-echouee, #non-connecte, #confirmation-echouee {

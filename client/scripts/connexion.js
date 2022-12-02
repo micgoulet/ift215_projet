@@ -22,11 +22,11 @@ function seConnecter() {
 function showConnexionReussie() {
     var x = document.getElementById("connexion-reussie");
     x.className = "show";
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
 }
 
 function showConnexionEchouee() {
     var x = document.getElementById("connexion-echouee");
     x.className = "show";
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
 }

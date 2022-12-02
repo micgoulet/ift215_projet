@@ -43,13 +43,13 @@ function soumettreInscription() {
 function showInscriptionReussie() {
     var x = document.getElementById("inscription-reussie");
     x.className = "show";
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
 }
 
 function showInscriptionEchouee() {
     var x = document.getElementById("inscription-echouee");
     x.className = "show";
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
 }
 
 /**
