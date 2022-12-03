@@ -210,5 +210,22 @@
         ],
         "status": "reçue",
         "date": "2022-12-02T18:49:04.500Z"
+    },
+    {
+        "id": 13,
+        "idClient": 1,
+        "montant": 6.6899999999999995,
+        "produits": [
+            {
+                "id": 0,
+                "idProduit": 2,
+                "nomProduit": "concombre",
+                "descriptionProduit": "pas un jouet",
+                "prix": 2.23,
+                "quantite": 3
+            }
+        ],
+        "status": "reçue",
+        "date": "2022-12-03T03:13:31.924Z"
     }
 ]

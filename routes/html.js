@@ -36,7 +36,17 @@ router.get('/panier', function(req, res){
 router.get('/confirmation', function(req, res){
     res.sendFile(path.join(__dirname + '/../client/confirmation.html'));
 });
-
+router.get('/commandes', function (req, res) {
+    res.sendFile(path.join(__dirname + '/../client/listecommandes.html'));
+  });
+router.get('/listecommandes', function (req, res) {
+    res.sendFile(path.join(__dirname + '/../client/listecommandes.html'));
+  });
+  
+router.get('/commandedetails', function (req, res) {
+    res.sendFile(path.join(__dirname + '/../client/commandedetails.html'));
+  });
+  
 
 
 module.exports = router
